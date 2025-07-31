@@ -32,6 +32,12 @@ class LinkedList{
         }
         return count;
     }
+    getHead(){
+        if(!this.head){
+            return null
+        }
+        return this.head.value;
+    }
 }
 
 class Node{
@@ -51,4 +57,4 @@ list.append(3);
 list.append(4);
 list.append(5);
 console.log(list.size())
-
+console.log(list.getHead());
