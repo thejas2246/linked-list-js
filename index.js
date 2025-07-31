@@ -38,6 +38,17 @@ class LinkedList{
         }
         return this.head.value;
     }
+    getTail(){
+        if(!this.head){
+            return null
+        }
+        let temp = this.head;
+        while(temp.nextNode!=null){
+            temp = temp.nextNode;
+        }
+        return temp.value
+
+    }
 }
 
 class Node{
@@ -50,11 +61,10 @@ let list = new LinkedList();
 list.append(1);
 list.append(2);
 list.prepend(8)
-list.prepend(7)
-list.prepend(5)
-
+list.prepend(4)
 list.append(3);
 list.append(4);
-list.append(5);
+list.append(3);
+console.log(list.getTail());
 console.log(list.size())
 console.log(list.getHead());
