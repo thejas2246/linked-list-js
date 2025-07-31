@@ -99,6 +99,33 @@ class LinkedList{
         }
         return string;
     }
+    insertAt(value,index){
+        if(!this.head){
+            return null;
+        }
+        if(index === 0){
+            this.prepend(value);
+            return;
+        }
+        if(index<0){
+            return null
+        }
+        let count = 0;
+        let temp = this.head;
+        while(temp){
+            if(count ===index-1){
+                let node = new Node(value,temp.nextNode);
+                temp.nextNode = node;
+                return ;
+            }
+            temp = temp.nextNode
+            count++
+        }
+
+        console.log('Enter a valid index')
+        return null;
+
+    }
 }
 
 class Node{
@@ -107,3 +134,9 @@ class Node{
         this.nextNode = nextNode;
     }
 }
+let list = new LinkedList()
+
+
+console.log(list.toString())
+list.insertAt(9,6);
+console.log(list.toString())
