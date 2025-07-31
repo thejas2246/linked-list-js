@@ -65,6 +65,18 @@ class LinkedList{
         }
         return null
     }
+    pop(){
+         if(!this.head){
+            return null;
+         }
+         let temp = this.head;
+         while(temp.nextNode.nextNode!=null){
+            temp = temp.nextNode;
+         }
+         console.log(temp.nextNode.value);
+         temp.nextNode = null;
+
+    }
 }
 
 class Node{
@@ -80,6 +92,9 @@ list.append(3);
 list.append(4);
 list.append(3);
 list.at(1)
+list.pop();
+list.pop();
+list.pop();
 console.log(list.getTail());
 console.log(list.size())
 console.log(list.getHead());
