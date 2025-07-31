@@ -77,6 +77,20 @@ class LinkedList{
          temp.nextNode = null;
 
     }
+    contains(value){
+        if(!this.head){
+            return false;
+        }
+        let temp = this.head;
+        while(temp){
+            if(temp.value===value){
+                return true;
+            }
+            temp = temp.nextNode
+        }
+
+        return false
+    }
     toString(){
         let string = "";
         if(!this.head){
@@ -136,7 +150,12 @@ class Node{
 }
 let list = new LinkedList()
 
+list.append(1)
+list.append(2)
+list.append(3)
+list.append(4)
 
 console.log(list.toString())
-list.insertAt(9,6);
+list.insertAt(9,2);
 console.log(list.toString())
+console.log(list.contains(0))
