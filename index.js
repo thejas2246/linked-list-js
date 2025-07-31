@@ -77,6 +77,28 @@ class LinkedList{
          temp.nextNode = null;
 
     }
+    toString(){
+        let string = "";
+        if(!this.head){
+            return string;
+        }
+        let temp = this.head;
+        let count = 0;
+        while(temp){
+            if(count===0){
+            string += `(${temp.value})`;
+            }
+            else{
+                string += `->(${temp.value})`;
+            }
+            temp = temp.nextNode
+            if(temp==null){
+                string+='->null'
+            }
+            count++;
+        }
+        return string;
+    }
 }
 
 class Node{
@@ -85,16 +107,3 @@ class Node{
         this.nextNode = nextNode;
     }
 }
-let list = new LinkedList();
-list.append(1);
-list.append(2);
-list.append(3);
-list.append(4);
-list.append(3);
-list.at(1)
-list.pop();
-list.pop();
-list.pop();
-console.log(list.getTail());
-console.log(list.size())
-console.log(list.getHead());
