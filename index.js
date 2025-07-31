@@ -91,6 +91,21 @@ class LinkedList{
 
         return false
     }
+    find(value){
+        if(!this.head){
+            return null
+        }
+        let count = 0;
+        let temp = this.head;
+        while(temp){
+            if(temp.value ===value){
+                return count;
+            }
+            temp = temp.nextNode
+            count++
+        }
+        return null
+    }
     toString(){
         let string = "";
         if(!this.head){
@@ -158,4 +173,5 @@ list.append(4)
 console.log(list.toString())
 list.insertAt(9,2);
 console.log(list.toString())
-console.log(list.contains(0))
+console.log(list.contains(2))
+console.log(list.find(4))
