@@ -23,6 +23,15 @@ class LinkedList{
             this.head = node;
         }
     }
+    size(){
+        let temp = this.head;
+        let count = 0;
+        while(temp!=null){
+            count++;
+            temp = temp.nextNode;
+        }
+        return count;
+    }
 }
 
 class Node{
@@ -41,5 +50,5 @@ list.prepend(5)
 list.append(3);
 list.append(4);
 list.append(5);
+console.log(list.size())
 
-list.traverse();
