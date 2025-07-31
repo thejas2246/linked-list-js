@@ -49,6 +49,22 @@ class LinkedList{
         return temp.value
 
     }
+    at(index){
+        let count = -1;
+        if(index<0){
+            return null;
+        }
+        let temp = this.head;
+        while(temp.nextNode!=null){
+            count++;
+            if(count ===index){
+                console.log(temp.value)
+                return temp.value;
+            }
+            temp = temp.nextNode;
+        }
+        return null
+    }
 }
 
 class Node{
@@ -60,11 +76,10 @@ class Node{
 let list = new LinkedList();
 list.append(1);
 list.append(2);
-list.prepend(8)
-list.prepend(4)
 list.append(3);
 list.append(4);
 list.append(3);
+list.at(1)
 console.log(list.getTail());
 console.log(list.size())
 console.log(list.getHead());
