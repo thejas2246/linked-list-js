@@ -69,6 +69,11 @@ class LinkedList{
          if(!this.head){
             return null;
          }
+         if(this.head.nextNode==null){
+            console.log(this.head.value)
+            this.head = null;
+            return
+         }
          let temp = this.head;
          while(temp.nextNode.nextNode!=null){
             temp = temp.nextNode;
@@ -155,6 +160,33 @@ class LinkedList{
         return null;
 
     }
+    removeAt(index){
+        if(!this.head){
+            return null
+        }
+        if(index === this.size()){
+            this.pop();
+            return 0
+        }
+        if(index ===0){
+            let temp = this.head;
+            this.head = this.head.nextNode;
+            temp = null 
+        }
+       let count = 0;
+       let temp = this.head;
+       while(temp){
+        if(count === index-1){
+            temp.nextNode = temp.nextNode.nextNode
+            return
+        }
+        count++;
+        temp = temp.nextNode;
+
+       }
+       return null
+        
+    }
 }
 
 class Node{
@@ -163,15 +195,5 @@ class Node{
         this.nextNode = nextNode;
     }
 }
-let list = new LinkedList()
 
-list.append(1)
-list.append(2)
-list.append(3)
-list.append(4)
 
-console.log(list.toString())
-list.insertAt(9,2);
-console.log(list.toString())
-console.log(list.contains(2))
-console.log(list.find(4))
