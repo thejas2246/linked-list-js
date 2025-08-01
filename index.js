@@ -1,4 +1,4 @@
-class LinkedList{
+export class LinkedList{
     head = null;
     append(value){
         if(!this.head){
